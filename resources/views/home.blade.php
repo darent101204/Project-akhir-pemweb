@@ -16,8 +16,8 @@
                     <p style="color: #7E7D7A;">Boost your productivity and build your <br> mood with a glass of coffee
                         in the morning</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2 rounded-5"
-                            style="background-color: #2F2105; border-color: #2F2105;">Order now</button>
+                        <a href="{{ route('products.index') }}" class="btn btn-primary btn-lg px-4 me-md-2 rounded-5"
+                            style="background-color: #2F2105; border-color: #2F2105;">Order now</a>
                     </div>
                 </div>
             </div>
@@ -55,9 +55,12 @@
                                                 style="color: {{ $product->category == 'hot' ? '#FF902A' : '#FFD28F' }}; border-color: {{ $product->category == 'hot' ? '#FF902A' : '#FFD28F' }};">{{ ucfirst($product->category) }}</button>
                                         </div>
                                         <div class="col-4">
-                                            <button class="btn rounded-5"
-                                                style="background-color: #FF902A; color: white;"><i
-                                                    class="fa fa-cart-shopping"></i></button>
+                                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn rounded-5"
+                                                    style="background-color: #FF902A; color: white;"><i
+                                                        class="fa fa-cart-shopping"></i></button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
@@ -133,9 +136,9 @@
                                 worldwide.</p>
                         </div>
                         <div class="col-12 mt-3">
-                            <button type="button" class="btn btn-primary btn-sm px-4 me-md-2 rounded-5"
+                            <a href="{{ route('products.index') }}" class="btn btn-primary btn-sm px-4 me-md-2 rounded-5"
                                 style="background-color: #2F2105; border-color: #2F2105; color: #FF902A;">get your
-                                coffee</button>
+                                coffee</a>
                         </div>
                     </div>
                 </div>
@@ -177,9 +180,12 @@
                                             <span style="color: #7E7D7A;">{{ Str::limit($product->description, 40) }}</span>
                                         </div>
                                         <div class="col-3">
-                                            <button class="btn rounded-5" style="background-color: #FF902A; color: white;">
-                                                <i class="fa fa-cart-shopping"></i>
-                                            </button>
+                                            <form action="{{ route('cart.add', $product->id) }}" method="POST">
+                                                @csrf
+                                                <button type="submit" class="btn rounded-5" style="background-color: #FF902A; color: white;">
+                                                    <i class="fa fa-cart-shopping"></i>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

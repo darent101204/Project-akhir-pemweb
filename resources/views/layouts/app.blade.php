@@ -25,13 +25,18 @@
                     <li><a href="{{ route('delivery') }}" class="nav-link px-2 {{ request()->routeIs('delivery') ? 'text-dark' : 'text-dark' }}">Delivery</a></li>
                 </ul>
 
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control rounded-5" style="font-family: Poppins, FontAwesome;"
-                        placeholder="&#xf002 Cappuccino" aria-label="Search">
+                <form action="{{ route('search') }}" method="GET" class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                    <input type="search" name="q" class="form-control rounded-5" style="font-family: Poppins, FontAwesome;"
+                        placeholder="&#xf002 Cappuccino" aria-label="Search" value="{{ request('q') }}">
                 </form>
 
-                <div class="dropdown text-end">
-                    <i class="fa fa-cart-shopping"></i>
+                <div class="dropdown text-end position-relative">
+                    <a href="{{ route('cart.index') }}" class="text-dark text-decoration-none">
+                        <i class="fa fa-cart-shopping fa-lg"></i>
+                        @if(session('cart') && count(session('cart')) > 0)
+                            <span class="cart-badge">{{ count(session('cart')) }}</span>
+                        @endif
+                    </a>
                 </div>
             </div>
         </div>

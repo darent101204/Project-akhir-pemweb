@@ -135,7 +135,7 @@
     <div class="container">
         <h3 class="mb-4">Experience the Coffee Street difference</h3>
         <a href="{{ route('products.index') }}" class="btn btn-lg rounded-5 px-5" 
-            style="background-color: #FF902A; color: white;">
+            style="background-color: #FF902A; color: white; text-decoration: none;">
             Explore Our Products
         </a>
     </div>

@@ -107,7 +107,7 @@
     <div class="container">
         <h3 class="mb-4">Ready to order?</h3>
         <a href="{{ route('products.index') }}" class="btn btn-lg rounded-5 px-5" 
-            style="background-color: #FF902A; color: white;">
+            style="background-color: #FF902A; color: white; text-decoration: none;">
             Browse Our Menu
         </a>
     </div>

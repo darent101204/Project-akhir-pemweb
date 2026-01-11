@@ -67,6 +67,12 @@
                                 <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-outline-primary rounded-5">
                                     <i class="fa fa-edit"></i>
                                 </a>
+                                <form action="{{ route('cart.add', $product->id) }}" method="POST" class="d-inline">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm rounded-5" style="background-color: #FF902A; color: white;">
+                                        <i class="fa fa-cart-shopping"></i>
+                                    </button>
+                                </form>
                                 <form action="{{ route('products.destroy', $product) }}" method="POST" class="d-inline" 
                                     onsubmit="return confirm('Are you sure you want to delete this product?');">
                                     @csrf
