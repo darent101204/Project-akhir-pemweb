@@ -1,0 +1,104 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Product;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class ProductSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $products = [
+            [
+                'name' => 'Vanilla Latte',
+                'description' => 'Smooth vanilla latte with premium coffee beans',
+                'price' => 21,
+                'image' => 'vanilla.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => true
+            ],
+            [
+                'name' => 'Espresso',
+                'description' => 'Strong and bold espresso shot',
+                'price' => 21,
+                'image' => 'espresso.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => true
+            ],
+            [
+                'name' => 'Hazelnut Latte',
+                'description' => 'Rich hazelnut flavored latte',
+                'price' => 21,
+                'image' => 'hazelnut.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => true
+            ],
+            [
+                'name' => 'Sandwich',
+                'description' => 'Bread with meat and vegetables',
+                'price' => 12,
+                'image' => 'img_product.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => false
+            ],
+            [
+                'name' => 'Hot Milk',
+                'description' => 'Hot milk with less sugar',
+                'price' => 12,
+                'image' => 'hot-milk.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => false
+            ],
+            [
+                'name' => 'Coffee Ice Cream',
+                'description' => 'Coffee ice cream with chocolate',
+                'price' => 12,
+                'image' => 'ice_cream.png',
+                'rating' => 4.5,
+                'category' => 'cold',
+                'is_featured' => false
+            ],
+            [
+                'name' => 'Cappuccino',
+                'description' => 'Classic cappuccino with foam',
+                'price' => 12,
+                'image' => 'cappuciono.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => false
+            ],
+            [
+                'name' => 'Mocca',
+                'description' => 'Chocolate coffee blend',
+                'price' => 12,
+                'image' => 'mocca.png',
+                'rating' => 4.5,
+                'category' => 'hot',
+                'is_featured' => false
+            ],
+            [
+                'name' => 'Waffle Ice Cream',
+                'description' => 'Crispy waffle with ice cream',
+                'price' => 12,
+                'image' => 'waffle.png',
+                'rating' => 4.5,
+                'category' => 'cold',
+                'is_featured' => false
+            ]
+        ];
+
+        foreach ($products as $product) {
+            Product::create($product);
+        }
+    }
+}

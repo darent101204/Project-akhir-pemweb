@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header{
+    background-color: #F6EBDA;
+}
+
+.hero{
+    background-color: #F5EBDA;
+}
+
+.delivery{
+    background-color: white;
+}
+
+card{
+    background-color: white;
+}
+
+/* Rating CSS Start */
+.image-wrapper {
+    position: relative;
+}
+
+.btn-rating {
+    top: 10px;
+    left: 10px;
+    background-color: #FFD700;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+/* Rating CSS End */
+
+/* Subscribe Start */
+.subscribe .input-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+}
+/* Subscribe End */
+
+/* Button Floating Start*/
+#backToTopBtn {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    border: none;
+    outline: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 18px;
+}
+
+#backToTopBtn:hover {
+    background-color: #0056b3;
+}
+/* Button Floating End */
