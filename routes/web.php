@@ -87,3 +87,14 @@ Route::get('/__bootstrap', function () {
         'message' => 'Laravel bootstrap completed'
     ]);
 });
+
+Route::get('/__setup', function () {
+    Artisan::call('key:generate', ['--force' => true]);
+    Artisan::call('migrate', ['--force' => true]);
+    Artisan::call('storage:link');
+
+    return response()->json([
+        'status' => 'OK',
+        'message' => 'Setup completed'
+    ]);
+});
