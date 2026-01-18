@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,3 +60,19 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+/*
+|--------------------------------------------------------------------------
+| 🚨 TEMPORARY SETUP ROUTE (HAPUS SETELAH SELESAI)
+|--------------------------------------------------------------------------
+*/
+Route::get('/__setup', function () {
+    Artisan::call('key:generate', ['--force' => true]);
+    Artisan::call('migrate', ['--force' => true]);
+    Artisan::call('session:table');
+    Artisan::call('cache:table');
+    Artisan::call('migrate', ['--force' => true]);
+    Artisan::call('optimize:clear');
+
+    return 'SETUP OK';
+});
