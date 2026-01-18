@@ -76,3 +76,14 @@ Route::get('/__setup', function () {
 
     return 'SETUP OK';
 });
+
+Route::get('/__bootstrap', function () {
+    Artisan::call('key:generate', ['--force' => true]);
+    Artisan::call('migrate:fresh', ['--force' => true]);
+    Artisan::call('optimize:clear');
+
+    return response()->json([
+        'status' => 'OK',
+        'message' => 'Laravel bootstrap completed'
+    ]);
+});
