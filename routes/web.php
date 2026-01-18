@@ -98,3 +98,4 @@ Route::get('/__setup', function () {
         'message' => 'Setup completed'
     ]);
 });
+
